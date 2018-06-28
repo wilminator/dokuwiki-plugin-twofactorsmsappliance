@@ -99,7 +99,7 @@ class helper_plugin_twofactorsmsappliance extends Twofactor_Auth_Module {
 	/**
 	 * Transmit the message via email to the address on file.
 	 */
-	public function transmitMessage($message, $force = false){		
+	public function transmitMessage($subject, $message, $force = false){		
 		if (!$this->canUse()  && !$force) { return false; }
 		$number = $this->_settingGet("phone", null);
 		if (!$number) {
